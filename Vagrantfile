@@ -6,14 +6,9 @@ Vagrant.configure("2") do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
+  config.vm.box = "phusion/ubuntu-14.04-amd64"
+
   config.vm.hostname = "jenkins-box-berkshelf"
-
-  # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise64"
-
-  # The url from where the 'config.vm.box' box will be fetched if it
-  # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
   # Assign this VM to a host-only network IP, allowing you to access it
   # via the IP. Host-only networks can talk to the host machine as well as
@@ -53,8 +48,8 @@ Vagrant.configure("2") do |config|
   # View the documentation for the provider you're using for more
   # information on available options.
 
-  config.ssh.max_tries = 40
-  config.ssh.timeout   = 120
+  # config.ssh.max_tries = 40
+  # config.ssh.timeout   = 120
 
   # The path to the Berksfile to use with Vagrant Berkshelf
   # config.berkshelf.berksfile_path = "./Berksfile"
@@ -85,7 +80,7 @@ Vagrant.configure("2") do |config|
     # run recipes
     chef.run_list = [
       'recipe[apt]',
-      'recipe[jenkins::server]',
+      'recipe[jenkins::master]',
       'recipe[rvm]',
       'recipe[rvm::vagrant]',
       'recipe[rvm::system]',
