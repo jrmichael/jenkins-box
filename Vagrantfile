@@ -73,7 +73,10 @@ Vagrant.configure("2") do |config|
         'rubies'        => ['2.0.0'],
         'default_ruby'  => '2.0.0',
         'global_gems'   => [{ 'name'    => 'bundler' },
-                            { 'name'    => 'rake' }]
+                            { 'name'    => 'rake' }],
+        'vagrant' => {
+            'system_chef_solo' => '/opt/chef/bin/chef-solo'
+        }
       }
     }
 
