@@ -87,7 +87,8 @@ Vagrant.configure("2") do |config|
       'recipe[rvm]',
       'recipe[rvm::vagrant]',
       'recipe[rvm::system]',
-      'recipe[rvm::gem_package]'
+      'recipe[rvm::gem_package]',
+      'recipe[docker]'
     ]
   end
 end

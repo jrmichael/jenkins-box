@@ -5,3 +5,5 @@ cookbook 'jenkins'
 cookbook 'rvm'
 
 cookbook 'runit'
+
+cookbook 'docker'
